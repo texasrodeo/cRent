@@ -1,0 +1,3 @@
+# Project exclude paths
+/CarRent/core/target/
+/CarRent/web/target/

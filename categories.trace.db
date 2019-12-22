@@ -1,0 +1,40 @@
+2019-12-22 20:18:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "USERS" не найдена
+Table "USERS" not found; SQL statement:
+SELECT * FROM Users [42102-200]
+2019-12-22 20:18:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "USERS" не найдена
+Table "USERS" not found; SQL statement:
+INSERT INTO users(name, phone_number, role)VALUES ('ad', 'a', 'admin') [42102-200]
+2019-12-22 20:19:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "USERS" не найдена
+Table "USERS" not found; SQL statement:
+SELECT * FROM Users [42102-200]
+2019-12-22 20:19:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "USERS" не найдена
+Table "USERS" not found; SQL statement:
+INSERT INTO users(name, phone_number, role)VALUES ('ad', 'a', 'admin') [42102-200]
+2019-12-22 20:19:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CARS" не найдена
+Table "CARS" not found; SQL statement:
+SELECT * FROM Cars [42102-200]
+2019-12-22 20:20:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CARS" уже существует
+Table "CARS" already exists; SQL statement:
+CREATE TABLE cars (id INT NOT NULL PRIMARY KEY auto_increment, brand VARCHAR (100) NOT NULL,info VARCHAR (100) NOT NULL,price INT (100) NOT NULL,availability BOOLEAN (100) NOT NULL) [42101-200]
+2019-12-22 20:20:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CARS" уже существует
+Table "CARS" already exists; SQL statement:
+CREATE TABLE cars (id INT NOT NULL PRIMARY KEY auto_increment, brand VARCHAR (100) NOT NULL,info VARCHAR (100) NOT NULL,price INT (100) NOT NULL,availability BOOLEAN (100) NOT NULL) [42101-200]
+2019-12-22 20:21:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CONTRACTS" уже существует
+Table "CONTRACTS" already exists; SQL statement:
+CREATE TABLE contracts (id INT NOT NULL PRIMARY KEY auto_increment, created_at DATE (100) NOT NULL,ends_at DATE (100) NOT NULL,client_id INT (100) NOT NULL,admin_id INT (100) NOT NULL,car_id INT (100) NOT NULL,is_approved BOOLEAN (100) NOT NULL) [42101-200]
+2019-12-22 20:21:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CONTRACTS" уже существует
+Table "CONTRACTS" already exists; SQL statement:
+CREATE TABLE contracts (id INT NOT NULL PRIMARY KEY auto_increment, created_at DATE (100) NOT NULL,ends_at DATE (100) NOT NULL,client_id INT (100) NOT NULL,admin_id INT (100) NOT NULL,car_id INT (100) NOT NULL,is_approved BOOLEAN (100) NOT NULL) [42101-200]
+2019-12-22 20:21:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CONTRACTS" уже существует
+Table "CONTRACTS" already exists; SQL statement:
+CREATE TABLE contracts (id INT NOT NULL PRIMARY KEY auto_increment, created_at DATE (100) NOT NULL,ends_at DATE (100) NOT NULL,client_id INT (100) NOT NULL,admin_id INT (100) NOT NULL,car_id INT (100) NOT NULL,is_approved BOOLEAN (100) NOT NULL) [42101-200]
