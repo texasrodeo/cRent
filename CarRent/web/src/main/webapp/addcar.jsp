@@ -12,15 +12,15 @@
     <form style="width:300px" method="post">
         <div class="form-group">
             <label for="brand">Car brand</label>
-            <input type="text" class="form-control" id="brand" placeholder="brand">
+            <input type="text" class="form-control" id="brand" name="brand" placeholder="brand">
         </div>
         <div class="form-group">
-            <label for="info">Car brand</label>
-            <input type="text" class="form-control" id="info" placeholder="info">
+            <label for="info">Car info</label>
+            <input type="text" class="form-control" id="info" name="info" placeholder="info">
         </div>
         <div class="form-group">
-            <label for="price">Car brand</label>
-            <input type="text" class="form-control" id="price" placeholder="price">
+            <label for="price">Car price</label>
+            <input type="text" class="form-control" id="price" name="price" placeholder="price">
         </div>
 
 
