@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/autopark")
+@WebServlet(urlPatterns = {"/autopark", "/car"})
 public class MainServlet extends HttpServlet {
 
     private AutoparkService autoparkService;
@@ -24,16 +24,28 @@ public class MainServlet extends HttpServlet {
 
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String idx = req.getParameter("idx");
-        if (idx != null) {
-            req.setAttribute("car", autoparkService.getCarById(Long.parseLong(idx)));
-            req.getRequestDispatcher("/car.jsp").forward(req, resp);
-        } else {
-            req.setAttribute("cars", autoparkService.getCars());
-            req.getRequestDispatcher("/autopark.jsp").forward(req, resp);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String id = request.getParameter("id");
+        if (id != null) {
+            request.setAttribute("car", autoparkService.getCarById(Long.parseLong(id)));
+            request.getRequestDispatcher("/car.jsp").forward(request, response);
         }
+        else{
+            request.setAttribute("cars", autoparkService.getCars());
+            request.getRequestDispatcher("/autopark.jsp").forward(request, response);
+        }
+
+
     }
+
+//    @Override
+//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//
+//        req.setAttribute("cars", autoparkService.getCars());
+//        req.getRequestDispatcher("/autopark.jsp").forward(req, resp);
+//
+//    }
 
 
 }

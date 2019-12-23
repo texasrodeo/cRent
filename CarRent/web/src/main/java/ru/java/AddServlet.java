@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(urlPatterns = "/addcar")
+@WebServlet(urlPatterns = {"/addcar", "/altercar", "/deletecar"})
 public class AddServlet extends HttpServlet {
     private AutoparkService autoparkService;
 
@@ -23,7 +23,19 @@ public class AddServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException{
-        request.getRequestDispatcher("/addcar.jsp").forward(request, response);
+        String id = request.getParameter("id");
+        if(id!=null && request.getServletPath().equals("/deletecar")){
+            autoparkService.removeCarByID(Long.parseLong(id));
+            String path = request.getContextPath() + "/autopark";
+            response.sendRedirect(path);
+        }
+        else if(id!=null && request.getServletPath().equals("/altercar")){
+            request.getRequestDispatcher("/altercar.jsp").forward(request, response);
+        }
+        else{
+            request.getRequestDispatcher("/addcar.jsp").forward(request, response);
+        }
+
     }
 
     @Override
@@ -31,10 +43,21 @@ public class AddServlet extends HttpServlet {
         String brand = request.getParameter("brand");
         String info = request.getParameter("info");
         String price = request.getParameter("price");
-        if (brand != null  && info!=null && price!=null) {
-            autoparkService.addCar(brand, info, Integer.parseInt(price));
-
-            request.getRequestDispatcher("/autopark").forward(request, response);
+        String id = request.getParameter("id");
+        String isAvailable = request.getParameter("availability");
+        if(id!=null){
+            autoparkService.updateCar(Long.parseLong(id), brand, info, Integer.parseInt(price), Boolean.getBoolean(isAvailable));
+            //send redirect
+            String path = request.getContextPath() + "/autopark";
+            response.sendRedirect(path);
         }
+        else{
+            autoparkService.addCar(brand, info, Integer.parseInt(price));
+            //send redirect
+            String path = request.getContextPath() + "/autopark";
+            response.sendRedirect(path);
+        }
+
+
     }
 }

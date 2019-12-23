@@ -29,8 +29,8 @@ public class AutoparkService {
 
     }
 
-    public boolean updateCar(Long id, String brand, String info, Integer price){
-        return autoPark.alterCar(new Car(id, brand, info, price));
+    public boolean updateCar(Long id, String brand, String info, Integer price, Boolean isAvailable){
+        return autoPark.alterCar(new Car(id, brand, info, price, isAvailable));
 
     }
 }
