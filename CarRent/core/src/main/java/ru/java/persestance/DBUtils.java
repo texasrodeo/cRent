@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.List;
 
 public class DBUtils {
-    private static final String URL = "jdbc:h2:C:\\Users\\rakdo\\Downloads/cRent/categories";
+    private static final String URL = "jdbc:h2:C:\\Users\\rakdo\\Downloads/cRent /categories";
     private static final String USER = "nobody";
     private static final String PASSWORD = "666";
 

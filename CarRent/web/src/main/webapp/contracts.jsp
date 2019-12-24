@@ -3,7 +3,7 @@
 <%@taglib prefix="tg" tagdir="/WEB-INF/tags" %>
 
 <head>
-
+    <meta name="viewport" content="width=device-width, initial-scale=4">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
